@@ -2,6 +2,8 @@ import React from "react"
 import Fade from 'react-reveal/Fade'
 import tw from 'twin.macro'
 
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
+
 import { Link } from "gatsby"
 
 const Wrapper = tw.div `
@@ -65,7 +67,7 @@ export default function BodyCopy ({data}) {
             <TextBlock>
                 <TextInnerWrap>
                     <Body>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ut auctor turpis. Donec mattis convallis est, at tempor metus lobortis quis. Phasellus quis maximus nulla. Quisque nec metus ligula. Curabitur at urna a lectus pharetra dignissim.
+                        {documentToReactComponents(data.bodyCopy.json)}
                     </Body>
                 </TextInnerWrap>
             </TextBlock>

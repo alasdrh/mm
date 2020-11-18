@@ -2,6 +2,8 @@ import React from "react"
 import Fade from 'react-reveal/Fade';
 import tw from 'twin.macro'
 
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
+
 import { Link } from "gatsby"
 
 import Lead1 from "../../../images/sample/mm-2.jpg"
@@ -51,7 +53,7 @@ export default function Banner ({data}) {
             <TextBlock>
                 <TextInnerWrap>
                     <Title>
-                    &ldquo;You can be daring, provocative and pioneer with new symbols&rdquo;
+                        {documentToReactComponents(data.copy.json)}
                     </Title>
                 </TextInnerWrap>
             </TextBlock>

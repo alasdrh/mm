@@ -5,7 +5,7 @@ import Slicer from "../../components/layout/editorial/slicer"
 
 
 export const AboutQuery = graphql`{
-  contentfulPage(title: {eq: "About"}, node_locale: {eq: "en-GB"}) {
+  contentfulPage(title: {eq: "About"}, node_locale: {eq: "ja-JP"}) {
     id
     title
     blocks {

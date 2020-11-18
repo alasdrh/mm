@@ -41,6 +41,16 @@ module.exports = {
           include: /assets/ // See below to configure properly
         }
       }
+    },
+
+    {
+      resolve: 'gatsby-plugin-i18n',
+      options: {        
+        langKeyDefault: 'en',
+        useLangKeyLayout: false,
+        prefixDefault: false,
+      }
     }
+
   ],
 }

@@ -52,7 +52,7 @@ export default function Header () {
                 <HeaderNavItem text={'Collections'} to={'/collections'} ></HeaderNavItem>
                 <HeaderNavItem text={'Contact'} to={'/contact'} ></HeaderNavItem>
 
-                <HeaderNavItem text={'EN/JP'} to={'#'} ></HeaderNavItem>
+                <HeaderNavItem text={'日本'} to={'/jp/about'} ></HeaderNavItem>
 
             </div>
 
