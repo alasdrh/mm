@@ -1,18 +1,12 @@
 import React from "react"
 import Layout from "../../components/layout/layout"
 
-import TwoCol from "../../components/layout/editorial/twoCol"
-
-
 import Portrait from "../../images/brand/MM_Portrait.jpg"
 
 
 export default function Old() {
     return (
     <Layout>
-
-      <TwoCol image={Portrait} />
-
 
         <div class={'w-auto py-16'}>
 
