@@ -1,9 +1,11 @@
 import React from "react"
 import tw from 'twin.macro'
+import Helmet from 'react-helmet'
 
 import { Link } from "gatsby"
 import HeaderNavItem from "../layout/styled/headerNavItem"
 import MMLogo from "../../assets/MM_wordmark.svg"
+import Headroom from "react-headroom"
 
 const Block = tw.div `
     bg-white 
@@ -28,7 +30,13 @@ const Logo = tw.div `
 export default function Header () {
     return (
         
+    
+    <Headroom>
     <Block>
+
+    <Helmet>
+            <title>Marguerita Mergentime</title>
+    </Helmet>
 
         <Container>
 
@@ -50,7 +58,8 @@ export default function Header () {
 
         </Container>
 
-    </Block>  
+    </Block> 
+    </Headroom> 
 
 
     )

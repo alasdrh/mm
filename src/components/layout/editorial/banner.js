@@ -1,10 +1,13 @@
 import React from "react"
+import Fade from 'react-reveal/Fade';
 import tw from 'twin.macro'
 
 import { Link } from "gatsby"
 
+import Lead1 from "../../../images/sample/mm-2.jpg"
+
 const Wrapper = tw.div `
-    max-h-screen80
+    md:max-h-screen80
     mb-8
     overflow-hidden
     flex
@@ -26,7 +29,7 @@ const TextBlock = tw.div `
 `
 
 const TextInnerWrap = tw.div `
-    w-2/3
+    md:w-2/3
     mx-auto
     text-center
 `
@@ -39,9 +42,10 @@ const Title = tw.div `
     leading-tight
 `
 
-export default function wideImage (props) {
+export default function Banner ({data}) {
     return (
 
+        <Fade>
     <Wrapper>
 
             <TextBlock>
@@ -53,10 +57,11 @@ export default function wideImage (props) {
             </TextBlock>
 
             <ImageBlock>
-                <Image src={props.image} />
+                <Image src={data.mainImage.file.url} />
             </ImageBlock>
 
     </Wrapper>
+    </Fade>
 
     )
 }

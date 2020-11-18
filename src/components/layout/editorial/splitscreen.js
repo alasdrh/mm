@@ -1,4 +1,5 @@
 import React from "react"
+import Fade from 'react-reveal/Fade';
 import tw from 'twin.macro'
 
 import { Link } from "gatsby"
@@ -8,7 +9,6 @@ const Wrapper = tw.div `
     mb-8
     overflow-hidden
     md:flex
-    bg-blue
 `
 
 const ImageBlock = tw.div `
@@ -31,15 +31,17 @@ const TextInnerWrap = tw.div `
 `
 
 const Title = tw.div `
-    text-white 
-    font-sans  
-    text-3xl md:text-6xl 
+    text-blue
+    font-sans 
+    font-bold 
+    text-3xl md:text-5xl 
     leading-tight
 `
 
 export default function Splitscreen (props) {
     return (
 
+    <Fade>
     <Wrapper>
 
             <TextBlock>
@@ -59,6 +61,7 @@ export default function Splitscreen (props) {
             </ImageBlock>
 
     </Wrapper>
+    </Fade>
 
     )
 }

@@ -1,29 +1,51 @@
 import React from "react"
 import Layout from "../../components/layout/layout"
 
-import WideImage from "../../components/layout/editorial/wideImage"
-import TwoCol from "../../components/layout/editorial/twoCol"
-import InlineGallery from "../../components/layout/editorial/inlineGallery"
+import Slicer from "../../components/layout/editorial/slicer"
 
 
-import Portrait from "../../images/brand/MM_Portrait.jpg"
-import Milky from "../../images/designs/457.jpg"
-import VB from "../../images/sample/virginia.jpg"
+export const AboutQuery = graphql`{
+  contentfulPage(title: {eq: "About"}) {
+    id
+    title
+    blocks {
+      type: __typename
+      ... on ContentfulBanner {
+        id
+        title
+        mainImage {
+          file {
+            url
+          }
+        }
+      }
+      ... on ContentfulCopyBlock {
+        id
+        title
+      }
+      ... on ContentfulTwoCol {
+        id
+        title
+        image {
+          file {
+            url
+          }
+        }
+      }
+    }
+  }
+}`
 
+export default function About({data}) {
 
-export default function About() {
+  const title = data.contentfulPage.title
+
+  const blocks = data.contentfulPage.blocks
+
     return (
     <Layout>
 
-      <TwoCol />
-
-      <WideImage image={Portrait} />
-
-      <TwoCol image={Milky} />
-
-      <InlineGallery image={VB} />
-
-      <TwoCol image={Milky} />
+      <Slicer data={blocks} />
 
     </Layout>
     )

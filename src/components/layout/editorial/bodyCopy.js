@@ -7,13 +7,14 @@ import { Link } from "gatsby"
 const Wrapper = tw.div `
     container
     mx-auto
-    py-32
-    flex
-    items-center
+    py-16 md:py-32
+    md:grid
+    grid-cols-12
+    px-8 md:px-0
 `
 
 const ImageBlock = tw.div `
-    flex-1
+
     justify-center
 `
 const Image = tw.img `
@@ -24,36 +25,42 @@ const Image = tw.img `
 `
 
 const TextBlock = tw.div `
-    flex-1
+    col-span-7
+    col-start-6
 `
 
 const TextInnerWrap = tw.div `
-    w-3/4
+    
 `
 
+const TitleBlock = tw.div `
+    col-span-3
+`
+    
 const Title = tw.div `
     text-blue
     font-sans 
     font-bold 
-    text-5xl 
+    text-2xl md:text-4xl 
     leading-tight
+    mb-4 md:mb-0
 `
 
 const Body = tw.div `
-    text-blue
-    text-2xl
+    text-darkgrey
+    text-xl md:text-2xl
     font-light
 `
 
-export default function Editorial (props) {
+export default function BodyCopy ({data}) {
     return (
 
     <Fade>
     <Wrapper>
 
-    <ImageBlock>
-        <Image src={props.image} />
-    </ImageBlock>
+        <TitleBlock>
+            <Title>{data.title}</Title>
+        </TitleBlock>
 
             <TextBlock>
                 <TextInnerWrap>

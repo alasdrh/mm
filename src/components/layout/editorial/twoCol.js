@@ -1,7 +1,10 @@
 import React from "react"
+import Fade from 'react-reveal/Fade';
 import tw from 'twin.macro'
 
 import { Link } from "gatsby"
+
+import MM from "../../../images/sample/marguerita.jpg"
 
 const Wrapper = tw.div `
     container
@@ -44,25 +47,26 @@ const Body = tw.div `
     font-light
 `
 
-export default function TwoCol (props) {
+export default function TwoCol({data}) {
     return (
 
+<Fade>
 <Wrapper>
 
     <ImageBlock>
-        <Image src={props.image} />
+        <Image src={data.image.file.url} />
     </ImageBlock>
 
     <TextBlock>
         <TextInnerWrap>
             <Body>
-                <p className={'mb-8'}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ut auctor turpis. Donec mattis convallis est, at tempor metus lobortis quis. Phasellus quis maximus nulla. Quisque nec metus ligula. Curabitur at urna a lectus pharetra dignissim.</p>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ut auctor turpis. Donec mattis convallis est, at tempor metus lobortis quis. Phasellus quis maximus nulla. Quisque nec metus ligula. Curabitur at urna a lectus pharetra dignissim.</p>
             </Body>
         </TextInnerWrap>
     </TextBlock>
 
 </Wrapper>
+</Fade>
 
     )
 }

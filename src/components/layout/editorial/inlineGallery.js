@@ -1,4 +1,5 @@
 import React from "react"
+import Fade from 'react-reveal/Fade';
 import tw from 'twin.macro'
 
 import { Link } from "gatsby"
@@ -27,6 +28,7 @@ const Image = tw.img `
 export default function InlineGallery (props) {
     return (
 
+<Fade>
 <Wrapper>
 
     <ImageBlock>
@@ -34,6 +36,7 @@ export default function InlineGallery (props) {
     </ImageBlock>
 
 </Wrapper>
+</Fade>
 
     )
 }
