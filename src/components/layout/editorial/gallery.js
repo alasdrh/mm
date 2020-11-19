@@ -34,8 +34,7 @@ const Wrapper = tw.div `
 `
 
 const Container = tw.div `
-    container
-    mx-auto
+    w-full
 `
 
 const ImageBlock = tw.div `
@@ -46,7 +45,21 @@ const Image = tw.img `
     w-full
 `
 
-export default function Gallery (props) {
+export default function Gallery ( {data} ) {
+
+    const blocks = data.galleryImages.map(function(block){
+    
+        return (
+
+            <ImageBlock>
+                <Image src={block.file.url} />
+            </ImageBlock>
+
+        )
+    
+    })
+    
+
     return (
 
     <Fade>
@@ -57,29 +70,10 @@ export default function Gallery (props) {
             <Carousel 
             swipeable={false}
             draggable={false}
-            showDots={true}
             responsive={responsive}
             >
 
-            <ImageBlock>
-                <Image src={props.image} />
-            </ImageBlock>
-
-            <ImageBlock>
-                <Image src={props.image} />
-            </ImageBlock>
-
-            <ImageBlock>
-                <Image src={props.image} />
-            </ImageBlock>
-
-            <ImageBlock>
-                <Image src={props.image} />
-            </ImageBlock>
-
-            <ImageBlock>
-                <Image src={props.image} />
-            </ImageBlock>
+           {blocks}
 
             </Carousel>
 

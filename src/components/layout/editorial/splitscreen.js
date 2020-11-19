@@ -2,6 +2,8 @@ import React from "react"
 import Fade from 'react-reveal/Fade';
 import tw from 'twin.macro'
 
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
+
 import { Link } from "gatsby"
 
 const Wrapper = tw.div `
@@ -38,7 +40,7 @@ const Title = tw.div `
     leading-tight
 `
 
-export default function Splitscreen (props) {
+export default function Splitscreen ({data}) {
     return (
 
     <Fade>
@@ -49,7 +51,7 @@ export default function Splitscreen (props) {
                 <TextInnerWrap>
 
                 <Title>
-                    &ldquo;You can be daring, provocative and pioneer with new symbols&rdquo;
+                    {documentToReactComponents(data.copy.json)}
                 </Title>
 
                 </TextInnerWrap>
@@ -57,7 +59,7 @@ export default function Splitscreen (props) {
             </TextBlock>
 
             <ImageBlock>
-                <Image src={props.image} />
+                <Image src={data.image.file.url} />
             </ImageBlock>
 
     </Wrapper>

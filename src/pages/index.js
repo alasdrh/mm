@@ -7,7 +7,6 @@ import TitleBlock from "../components/layout/styled/titleBlock"
 import Splitscreen from "../components/layout/editorial/splitscreen"
 import Editorial from "../components/layout/editorial/editorial"
 import Instagram from "../components/layout/instagram"
-import Carousel from "../components/layout/editorial/gallery"
 
 import Plate from "../images/designs/MM_Plate.jpg"
 import Scarf from "../images/designs/MM_Scarf.jpg"
@@ -26,16 +25,6 @@ const Test = tw.div`
 export default function Home() {
   return (
   <Layout>
-
-    <Splitscreen image={Lead2} />
-
-    <Editorial image={MM} />
-
-    <Splitscreen image={Plate} />
-
-    <Carousel image={Scarf} />
-
-    <Editorial image={MM} />
 
     <Instagram />
 

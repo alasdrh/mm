@@ -38,6 +38,26 @@ export const AboutQuery = graphql`{
           }
         }
       }
+      ... on ContentfulSplitscreenBanner {
+        id
+        title
+        copy {
+          json
+        }
+        image {
+          file {
+            url
+          }
+        }
+      }
+      ... on ContentfulGallery {
+        id
+        galleryImages {
+          file {
+            url
+          }
+        }
+      }
     }
   }
 }`

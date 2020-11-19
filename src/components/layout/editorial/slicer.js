@@ -3,6 +3,8 @@ import React from "react"
 import BodyCopy from "./bodyCopy"
 import Banner from "./banner"
 import TwoCol from "./twoCol"
+import Splitscreen from "./splitscreen"
+import Gallery from "./gallery"
 
 export default function Slicer ( {data} ) {
 
@@ -27,6 +29,19 @@ export default function Slicer ( {data} ) {
                 case "ContentfulTwoCol":
                     return(
                         <TwoCol data={block} />
+                    )
+                break;
+
+                case "ContentfulSplitscreenBanner":
+                    return(
+                        <Splitscreen data={block} />
+                    )
+                break;
+
+
+                case "ContentfulGallery":
+                    return(
+                        <Gallery data={block} />
                     )
                 break;
 
