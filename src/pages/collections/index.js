@@ -1,17 +1,26 @@
 import React from "react"
 import Layout from "../../components/layout/layout"
-import TitleBlock from "../../components/layout/styled/titleBlock"
+
+import Slicer from "../../components/layout/editorial/slicer"
 
 
-export default function Collections() {
+export const CollectionsQuery = graphql`{
+  contentfulPage(title: {eq: "Collections"}, node_locale: {eq: "en-GB"}) {
+    id
+    title
+    ...contentBlocks
+  }
+}`
+
+export default function Collections({data}) {
+
+  const title = data.contentfulPage.title
+  const blocks = data.contentfulPage.blocks
+
     return (
     <Layout>
 
-<div class={'w-2/3 mx-auto pt-16 text-center'}>
-
-  <TitleBlock title={'Collections'}></TitleBlock>
-
-</div>
+      <Slicer data={blocks} />
 
     </Layout>
     )

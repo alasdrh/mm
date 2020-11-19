@@ -1,22 +1,26 @@
 import React from "react"
-
 import Layout from "../../components/layout/layout"
-import Banner from "../../components/layout/editorial/banner"
 
-import TitleBlock from "../../components/layout/styled/titleBlock"
-
-import HeaderImage from "../../images/sample/mm-3.jpg"
+import Slicer from "../../components/layout/editorial/slicer"
 
 
-export default function Contact() {
+export const ContactQuery = graphql`{
+  contentfulPage(title: {eq: "Contact"}, node_locale: {eq: "en-GB"}) {
+    id
+    title
+    ...contentBlocks
+  }
+}`
+
+export default function Contact({data}) {
+
+  const title = data.contentfulPage.title
+  const blocks = data.contentfulPage.blocks
+
     return (
     <Layout>
 
-      <div class={'w-2/3 mx-auto pt-16 text-center'}>
-
-      <TitleBlock title={'Contact'}></TitleBlock>
-
-</div>
+      <Slicer data={blocks} />
 
     </Layout>
     )

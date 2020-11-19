@@ -8,64 +8,13 @@ export const AboutQuery = graphql`{
   contentfulPage(title: {eq: "About"}, node_locale: {eq: "en-GB"}) {
     id
     title
-    blocks {
-      type: __typename
-      ... on ContentfulBanner {
-        id
-        title
-        copy {
-          json
-        }
-        mainImage {
-          file {
-            url
-          }
-        }
-      }
-      ... on ContentfulCopyBlock {
-        id
-        title
-        bodyCopy {
-          json
-        }
-      }
-      ... on ContentfulTwoCol {
-        id
-        title
-        image {
-          file {
-            url
-          }
-        }
-      }
-      ... on ContentfulSplitscreenBanner {
-        id
-        title
-        copy {
-          json
-        }
-        image {
-          file {
-            url
-          }
-        }
-      }
-      ... on ContentfulGallery {
-        id
-        galleryImages {
-          file {
-            url
-          }
-        }
-      }
-    }
+    ...contentBlocks
   }
 }`
 
 export default function About({data}) {
 
   const title = data.contentfulPage.title
-
   const blocks = data.contentfulPage.blocks
 
     return (

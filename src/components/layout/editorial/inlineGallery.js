@@ -2,8 +2,6 @@ import React from "react"
 import Fade from 'react-reveal/Fade';
 import tw from 'twin.macro'
 
-import { Link } from "gatsby"
-
 const Wrapper = tw.div `
     container
     mx-auto

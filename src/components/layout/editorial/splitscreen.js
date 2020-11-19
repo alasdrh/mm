@@ -4,8 +4,6 @@ import tw from 'twin.macro'
 
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 
-import { Link } from "gatsby"
-
 const Wrapper = tw.div `
     md:max-h-screen80
     mb-8

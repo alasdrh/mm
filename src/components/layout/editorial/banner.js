@@ -4,10 +4,6 @@ import tw from 'twin.macro'
 
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 
-import { Link } from "gatsby"
-
-import Lead1 from "../../../images/sample/mm-2.jpg"
-
 const Wrapper = tw.div `
     md:max-h-screen80
     mb-8

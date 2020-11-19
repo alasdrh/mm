@@ -2,21 +2,17 @@ import React from "react"
 import Fade from 'react-reveal/Fade';
 import tw from 'twin.macro'
 
-import { Link } from "gatsby"
-
-import MM from "../../../images/sample/marguerita.jpg"
-
 const Wrapper = tw.div `
     container
     mx-auto
-    grid
-    grid-cols-12
-    pt-12
-    mb-16
+    py-32
+    flex
+    items-center
 `
 
 const ImageBlock = tw.div `
-    col-span-4
+    flex-1
+    justify-center
 `
 const Image = tw.img `
     object-cover
@@ -26,11 +22,11 @@ const Image = tw.img `
 `
 
 const TextBlock = tw.div `
-    col-span-7
+    flex-1
 `
 
 const TextInnerWrap = tw.div `
-    
+    w-3/4
 `
 
 const Title = tw.div `
